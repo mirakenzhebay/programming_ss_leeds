@@ -15,7 +15,7 @@ version: 1.0
 #import libraries
 import matplotlib.pyplot
 import time
-import agentframework_2 as agentframework #the old agentframework version for this practical
+import agentframework  # module that stores Agent class
 
 ##custom function(s)
 def distance_between(agents_row_a, agents_row_b):
@@ -51,8 +51,8 @@ neighbourhood=20
 
 #Create 100 agents with their random coord-s using Agent class
 for i in range(num_of_agents):
-    agents.append(agentframework.Agent(agents))  
-    print("Agents' initial coords: agent", i, agents[i]) #check the starting locations of the agents
+    agents.append(agentframework.Agent(i, agents))   
+    print("Agents' initial coords: agent", agents[i]) #check the starting locations of the agents
 
 #Move the agents around for number of iterations
 for j in range(num_of_iterations):
@@ -71,6 +71,9 @@ for agents_row_a in agents:
 #Plot the agent locations
 matplotlib.pyplot.ylim(0, 99)
 matplotlib.pyplot.xlim(0, 99)
+matplotlib.pyplot.ylabel('Y')
+matplotlib.pyplot.xlabel('X')
+matplotlib.pyplot.title('AGENT BASED MODEL')
 for i in range(num_of_agents):
         matplotlib.pyplot.scatter(agents[i].x, agents[i].y)
 matplotlib.pyplot.show()

@@ -15,7 +15,6 @@ import random
 import operator
 import matplotlib.pyplot
 
-
 # Create empty list of agents
 agents=[]
 
@@ -26,8 +25,6 @@ num_of_agents = 10
 for i in range(num_of_agents):
     agents.append([random.randint(0,100),random.randint(0,100)])
 #print("Agents coords: ", agents)
-
-
 
 #Move the agents around for number of iterations based on random value
 num_of_iterations=10
@@ -43,9 +40,6 @@ for j in range(num_of_iterations):
              agents[i][1] += 1
         else:
              agents[i][1] -= 1
-             
-
-
      
      #The below are two techniques to address edge issues 
      #edge issue is when the range is too large
@@ -67,12 +61,11 @@ for j in range(num_of_iterations):
             agents[i][0] = (agents[i][0] - 1) % 100
     #print("Agents' coord-s at iteration ", j, ":", agents)
 
-
-
-# Calculate the Pythagorean distance between the agents 
-#dist = (((agents[0][0]- agents[1][0])**2) + ((agents[0][1] - agents[1][1])**2))**0.5
-#print("Distance between agents: ", round(dist,2))
-
+"""
+Calculate the Pythagorean distance between the agents 
+dist = (((agents[0][0]- agents[1][0])**2) + ((agents[0][1] - agents[1][1])**2))**0.5
+print("Distance between agents: ", round(dist,2))
+"""
 
 #Find the  furthest east agent (larger x)
 maxx = max(agents, key=operator.itemgetter(1))

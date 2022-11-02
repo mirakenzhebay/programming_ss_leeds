@@ -12,13 +12,13 @@ version: 1.0
 #import necessary libraries
 import matplotlib.pyplot #for plotting
 import time  #to check time
-import agentframework_3 as agentframework #updated version of agentframework which includes '.eat' and'.store' class methods
+import agentframework   # module that stores Agent class
 import csv  #to read and write csv files
 
 #custom function(s)
 def distance_between(agents_row_a, agents_row_b):
     """
-    This function calculates the distance between two agents
+    Calculate the euclidean distance between two agents
 
     Parameters
     ----------
@@ -63,7 +63,7 @@ num_of_iterations=100
 
 #Create 100 agents with their random coord-s
 for i in range(num_of_agents):
-    agents.append(agentframework.Agent(i, environment, agents))
+    agents.append(agentframework.Agent(i, agents, environment))
     print("Agents' initial coords:", agents[i]) #check the starting locations of the agents
 
 #Move the agents around for number of iterations
@@ -72,49 +72,39 @@ for j in range(num_of_iterations):
         agents[i].move()
         agents[i].eat()
 
-
+# Check the new locations of the agents
 for i in range(num_of_agents):
-    print("Agents' coords after moving around:", agents[i]) #check the new locations of the agents
-
+    print("Agents' coords after moving around:", agents[i]) 
 
 #Test distance between agents
 for agents_row_a in agents:
     for agents_row_b in agents:
         distance = distance_between(agents_row_a, agents_row_b)
 
-#Plot the agent locations
-matplotlib.pyplot.ylim(0, 99)
-matplotlib.pyplot.xlim(0, 99)
+#Plot the agent locations within environment
+matplotlib.pyplot.ylim(0, len(environment[1]))
+matplotlib.pyplot.xlim(0, len(environment[0]))
+matplotlib.pyplot.ylabel('Y')
+matplotlib.pyplot.xlabel('X')
+matplotlib.pyplot.title('AGENT BASED MODEL')
 matplotlib.pyplot.imshow(environment)
 for i in range(num_of_agents):
         matplotlib.pyplot.scatter(agents[i].x, agents[i].y)
 matplotlib.pyplot.show()
 
-
-#Check time
+#Check time taken
 end = time.process_time()
 print("time = " + str(end - start))
 
 
 #1.Write the resulting environment file
-
 with open("dataout.txt", "w") as f:   
     for line in environment:
         for value in line:
             f.write(str(value) + " ")
         f.write("\n")
 
-#2. Write total amount stored by all the agents in a line
-#stored=[]
-#for line in 
-#with open("dataout_store.txt", "a") as f:   #'a' stands for append, which means that with every run the data appends instead of overwriting
-#    for line in agents.sto:
-#        f.write(str(line) + " ")
-#        f.write("\n")
 
-#stored_food = agents.store
-#print(stored_food)
-
-for i in range(num_of_agents):
-    agents[i].get_x()
+# for i in range(num_of_agents):
+#     agents[i].get_x()
 

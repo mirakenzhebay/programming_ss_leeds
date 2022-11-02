@@ -13,7 +13,6 @@ import random
 import operator
 import matplotlib.pyplot
 
-
 # Create empty list of agents
 agents=[]
 
@@ -27,8 +26,7 @@ random_num=random.random()
 if random_num < 0.5:
      agents[0][0] += 1
 else:
-     agents[0][0] -= 1
-     
+     agents[0][0] -= 1   
 # x coordinates
 if random_num < 0.5:
      agents[0][1] += 1
@@ -56,7 +54,6 @@ else:
      agents[1][1] -= 1
 
 # Calculate the Pythagorean distance between the agents 
-
 dist = (((agents[0][0]- agents[1][0])**2) + ((agents[0][1] - agents[1][1])**2))**0.5
 #print("Distance between agents: ", round(dist,2))
 

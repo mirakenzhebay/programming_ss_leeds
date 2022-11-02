@@ -11,8 +11,6 @@ version: 1.0
 
 #import libraries
 import random
-import operator
-import matplotlib.pyplot
 import time
 
 #custom function(s)
@@ -96,7 +94,6 @@ print('Max distance between two agents from the list:', maxdistance)
 #        matplotlib.pyplot.scatter(agents[i][1],agents[i][0])
 # #matplotlib.pyplot.scatter(maxx[1], maxx[0], color='red')
 # matplotlib.pyplot.show()
-
 
 #Check time taken
 end = time.process_time()

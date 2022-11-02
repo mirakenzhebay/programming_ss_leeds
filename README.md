@@ -26,7 +26,7 @@ In this practical, we perform the followings:
 In this practical,  we perform the followings:
 1) as in the previous practical we import raster data as our agents' environment and let our created agents interact with it-move around it, eat and and store eaten- using the Agent class methods stored in agentframework.
 2) we let the agents communicate with each other and change each other variables using '.share_with_neighbours' method. This method looks for nearest neighbours of agent in specified distance from it and shares the food with them by splitting their total amount of food equally. More details of the method are given in the source code - agentframework.py
-3) introduce artifacts - patterns or mistakes that result from the model's operation, not from how well it represents reality -  and avoid them by randomizing the order=shuffling.
+3) introduce artifacts concept - patterns or mistakes that result from the model's operation, not from how well it represents reality -  and avoid them by randomizing the order=shuffling.
 
 ## Practical 8
 In this practical, we perform the followings:
@@ -36,3 +36,7 @@ In this practical, we perform the followings:
 
 ## Practical 9
 In this practical, we build Graphical User Interface (GUI) for our model to display it with menu to run, and perform web scraping - request some data into it from the web.
+
+Environment at 1st iteration|  Environment after 1000 iterations
+:--------------------------:|:--------------------------:
+![](python/figures/practical9_1iter.png )  |  ![](python/figures/practical9 -1000iter.png )

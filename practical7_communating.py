@@ -6,9 +6,9 @@ and let our created agents interact with it-move around it, eat and and store ea
 the Agent class methods stored in agentframework.
 2) we let the agents communicate with each other and change each other variables using 
 '.share_with_neighbours' method. This method looks for nearest neighbours of agent in specified
-distance from it and shares the food with them by splitting their total amount of food equally.
+distance from it and shares the food with them by splitting their total amount of food evenly.
 More details of the method are given in the source code - agentframework.py
-3) introduce artifacts - patterns or mistakes that result from the model's 
+3) introduce artifacts concept - patterns or mistakes that result from the model's 
 operation, not from how well it represents reality -  and avoid them by randomizing the order=shuffling.
 
 @author: Mira
@@ -17,8 +17,8 @@ version: 1.0
 #import libraries
 import random
 import time
-import agentframework_3 as agentframework          #containing our new 'Agent' class
-import csv                     #to read and write csv files
+import agentframework       # module that stores Agent class
+import csv                     
 
 #check how long it takes to run code
 start = time.process_time()
@@ -46,7 +46,7 @@ neighbourhood=20 #max distance from the agent that is considered its neighbourho
 
 #Create agents with their random coord-s
 for i in range(num_of_agents):
-    agents.append(agentframework.Agent(i, environment, agents))
+    agents.append(agentframework.Agent(i, agents, environment, neighbourhood))
     #print("Agents' initial coords:", agents[i]) #check the starting locations of the agents
 
 #Move the agents around, let them eat and share with neighbours the eaten(stored) 
@@ -56,11 +56,12 @@ for j in range(num_of_iterations):
     for i in range(num_of_agents):
         agents[i].move()
         agents[i].eat()
-        agents[i].share_with_neighbours(neighbourhood) 
+        agents[i].share_with_neighbours(agents) 
 
-#for i in range(num_of_agents):
-    #print("Agents' coords after all the actions:", agents[i]) #check the new locations of the agents & how much they store
+# Check the new locations of the agents & how much they store
+# for i in range(num_of_agents):
+# print("Agents' coords after all the actions:", agents[i]) 
 
-#Check time
+#Check time taken
 end = time.process_time()
 print("time = " + str(end - start))
