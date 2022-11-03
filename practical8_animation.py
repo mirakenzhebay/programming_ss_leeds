@@ -11,6 +11,7 @@ version: 1.0
 """
 
 import random
+from re import A
 from unittest import skip
 import matplotlib.pyplot
 import matplotlib.animation 
@@ -23,8 +24,10 @@ def gen_function(b = []):
     Generator function to provide information to update function in every frame.
     """
     global carry_on 
-    while carry_on :
-        yield num_of_iterations		
+    a=0
+    while carry_on and a <= num_of_iterations:
+        yield a
+        a += 1
         	
 def update(frame_number):
     """
@@ -113,7 +116,7 @@ wolves = []
 # Set number of agents, iterations,neighbourhood
 num_of_agents = 20
 num_of_wolves = 10
-num_of_iterations = 1000
+num_of_iterations = 10
 neighbourhood = 30
 
 # Create the agents 
@@ -126,13 +129,17 @@ for i in range(num_of_wolves):
     wolves.append(agentframework.Wolf(i, wolves, environment,neighbourhood))
 
 # Animate
-animation = matplotlib.animation.FuncAnimation(fig, update,frames=gen_function, repeat=False)
+animation = matplotlib.animation.FuncAnimation(fig, update, frames = gen_function, repeat=False)
 matplotlib.pyplot.show()
 
+
 # Write out the resulting environment to file
-dataout = open('dataout.txt', 'w', newline='') 
+dataout = open('env_out.txt', 'w', newline='') 
 writer = csv.writer(dataout, delimiter=',')
 for row in environment:		
 	writer.writerow(row)
 dataout.close()
 
+
+#Save the animation - didn't work 
+# animation.save("animation.gif", writer = "imagemagick")

@@ -33,10 +33,18 @@ In this practical, we perform the followings:
 1) we animate our model using matplotlib.animatiion
 2) implement stopping condition based on how much the agent stores (the sheep has eaten)
 2) further improve the model by adding Offspring class(inherits the functionalities of the Agent) and Wolf class with functionalities to interact with other objects
+Note: I was trying to save the animation as .mp4 for evidence but didn't manage
 
 ## Practical 9
-In this practical, we build Graphical User Interface (GUI) for our model to display it with menu to run, and perform web scraping - request some data into it from the web.
+In this practical, we build Graphical User Interface (GUI) for our model to display it with menu to run, and perform web scraping - request some data into it from the web. This gives the final version ABM - model.py
 
-Environment at 1st iteration|  Environment after 1000 iterations
-:--------------------------:|:--------------------------:
-![](python/figures/practical9_1iter.png )  |  ![](python/figures/practical9 -1000iter.png )
+
+## Running the model
+To run the model:
+1) Download/clone the repository
+2) Open the terminal/command line and change the current directory to the directory of the repository
+3) run python model.py [number of agents] [number of agents] [neighbourhood] [number of iterations] 
+
+
+### Licence
+This project is licenced under the MIT licence. 

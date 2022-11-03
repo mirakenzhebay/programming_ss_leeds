@@ -52,15 +52,15 @@ neighbourhood=20
 #Create 100 agents with their random coord-s using Agent class
 for i in range(num_of_agents):
     agents.append(agentframework.Agent(i, agents))   
-    print("Agents' initial coords: agent", agents[i]) #check the starting locations of the agents
+    # print("Agents' initial coords: agent", agents[i]) #check the starting locations of the agents
 
 #Move the agents around for number of iterations
 for j in range(num_of_iterations):
     for i in range(num_of_agents):
         agents[i].move()
 
-for i in range(num_of_agents):
-    print("Agents' coords after moving around: agent", i, agents[i]) #check the new locations of the agents
+# for i in range(num_of_agents):
+    # print("Agents' coords after moving around: agent", i, agents[i]) #check the new locations of the agents
 
 
 #Calculate distance between agents

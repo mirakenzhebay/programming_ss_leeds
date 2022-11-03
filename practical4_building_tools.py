@@ -68,7 +68,7 @@ for j in range(num_of_iterations):
 
 # Calculating the Pythagorean distance between the agents 
 distance = distance_between(agents[0], agents[1])
-print("Distance between first two agents: ",distance)
+# print("Distance between first two agents: ",distance)
 
 
 #Test distance between agents
@@ -82,7 +82,7 @@ for i in range(num_of_agents):
             maxxy=(agents[i],agents[j])
             print(maxxy)
             print(distance)
-print('Max distance between two agents from the list:', maxdistance)
+# print('Max distance between two agents from the list:', maxdistance)
        
 #Find the  furthest east agent (larger x)
 #maxx=max(agents, key=operator.itemgetter(1))

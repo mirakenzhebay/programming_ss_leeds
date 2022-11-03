@@ -59,7 +59,7 @@ agents=[]
 
 #Set number of agents, iterations
 num_of_agents = 10
-num_of_iterations=100
+num_of_iterations=1000
 
 #Create 100 agents with their random coord-s
 for i in range(num_of_agents):
@@ -82,6 +82,7 @@ for agents_row_a in agents:
         distance = distance_between(agents_row_a, agents_row_b)
 
 #Plot the agent locations within environment
+matplotlib.pyplot.figure(figsize=(7, 7))
 matplotlib.pyplot.ylim(0, len(environment[1]))
 matplotlib.pyplot.xlim(0, len(environment[0]))
 matplotlib.pyplot.ylabel('Y')

@@ -74,6 +74,9 @@ maxx = max(agents, key=operator.itemgetter(1))
 #Plot the agent locations
 matplotlib.pyplot.ylim(0, 99)
 matplotlib.pyplot.xlim(0, 99)
+matplotlib.pyplot.ylabel('Y')
+matplotlib.pyplot.xlabel('X')
+matplotlib.pyplot.title('AGENT BASED MODEL')
 for i in range(num_of_agents):
        matplotlib.pyplot.scatter(agents[i][1],agents[i][0])
 matplotlib.pyplot.scatter(maxx[1], maxx[0], color='green')   #plot the furthest east agent in green
