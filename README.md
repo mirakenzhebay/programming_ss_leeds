@@ -1,6 +1,12 @@
 # Programming for Social Sciences, Assignment #1: practicals delivery
 This repository includes commented practicals from Programming for Social Sciences module, University of Leeds. The are 9 practicals which are designed to learn how to build simple Agent-based Model. The practicals flow starts from creating agents with their location to making them interact with environment and each other. It also gives introduction on plotting and animating agents and environment. In the end the way how to perform web scraping is given. More details on each practical are provided below.
 
+## Running the model
+To run the model:
+1) Download/clone the repository
+2) Open the terminal/command line and change the current directory to the directory of the repository
+3) run python model.py [number of agents] [number of agents] [neighbourhood] [number of iterations] 
+
 ## Practical 1
 In this practical, the two agents are created and their y and x coordinates are set. They both begin at the same spot and move forward using random numbers. The final step is to compute the distance  between the agents.
 
@@ -37,13 +43,6 @@ Note: I was trying to save the animation as .mp4 for evidence but didn't manage
 
 ## Practical 9
 In this practical, we build Graphical User Interface (GUI) for our model to display it with menu to run, and perform web scraping - request some data into it from the web. This gives the final version ABM - model.py
-
-
-## Running the model
-To run the model:
-1) Download/clone the repository
-2) Open the terminal/command line and change the current directory to the directory of the repository
-3) run python model.py [number of agents] [number of agents] [neighbourhood] [number of iterations] 
 
 
 ### Licence
